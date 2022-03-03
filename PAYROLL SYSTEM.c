@@ -1,45 +1,45 @@
 #include<stdio.h>
-#include<conio.h>
 #include<math.h>
 
 const int NHIF = 500;
 const int NSSF = 400;
+int Basic_Salary[]={150000,100000,70000,60000,50000,25000.100000,90000,70000};
+int RiskAllowannce[]={1000,1500,1500,1000,1500,1500,12000,15000,15000};
+int HouseAllowance[]={35000,15000,14000,35000,15000,14000,20000,15000,15000};
 
 int main()
+{ while (1)
 {
     char F_Name; char S_Name;
     int Title;
-    int Gross_Salary; float OvertimeHours; int NetSalary; float PAYE; float OvertimeAllowance;
+    double Gross_Salary; double OvertimeHours; double NetSalary; double PAYE; double OvertimeAllowance;
     int Department; int Deductions;
 
     printf("\n************************************************************************\n");
-    printf("                  FATMA CONSULTANTS PAYROLL SYSTEM                         \n");
-    printf("*************************************************************************\n\n");
+    printf("\n                  FATMA CONSULTANTS PAYROLL SYSTEM                         \n");
+    printf("\n************************************************************************\n\n");
     printf("Welcome to our Payrol Sysetm\nplease choose the Department you belong to below");
-    printf("\n 1.Adminstration Department\n 2.Human Resource Department\n 3.ICT Department\n 4.Support Stuff Department\n");
+    printf("\n 1.Adminstration Department\n 2.Human Resource Department\n 3.ICT Department\n\n");
  
     scanf("%d",&Department);
     switch (Department)
         {
          case 1:
-         
-          printf("Enter your First Name: \n");
+
+          printf("Enter your First Name:");
           scanf("%c",&F_Name);
-          printf("Enter your second Name:\n");
+          printf("\nEnter your second Name:");
           scanf("%c",&S_Name);
-          printf("\nEnter your Title\n 1.C.E.O, 2.Manager ,3.Assistant Manager,");
+          printf("\nEnter your Title\n 1.C.E.O,\n2.Manager ,\n3.Assistant Manager,\n");
           scanf("%d",&Title);
-            if (Title=1)
-            {    int Basic_Salary[]={150000,100000,70000};
-                 int RiskAllowannce[]={1000,1500,1500};
-                 int HouseAllowance[]={35000,15000,14000};
-                 printf("Proceed to Salary Calculation\n");
-                 printf("\nYour Basic Pay is Ksh.%d",Basic_Salary[0]);
-                 printf("Enter Total overtime worked in the past month:");
-                 scanf("%f",&OvertimeHours);
-                 OvertimeAllowance = OvertimeHours*400;
-                 Gross_Salary = Basic_Salary[0] + RiskAllowannce[0]+ HouseAllowance[0] + OvertimeAllowance;
-                     if(Gross_Salary<12300){
+            if (Title=1) {    
+
+             printf("\nYour Basic Pay is Ksh. %d",Basic_Salary[0]);
+             printf("\nEnter Total overtime worked in the past month:");
+             scanf("%lf",&OvertimeHours);
+             OvertimeAllowance = OvertimeHours*400;
+             Gross_Salary = Basic_Salary[0] + RiskAllowannce[0]+ HouseAllowance[0] + OvertimeAllowance;
+                if(Gross_Salary<12300){
                         PAYE= Gross_Salary*0.1;
                      }
                     else if(Gross_Salary <=23900){
@@ -55,13 +55,11 @@ int main()
                 Deductions= PAYE + NSSF +NHIF;
                 NetSalary= Gross_Salary - Deductions;
             }else if (Title=2)
-            {    int Basic_Salary[]={150000,100000,70000};
-                 int RiskAllowannce[]={1000,1500,1500};
-                 int HouseAllowance[]={35000,15000,14000};
-                 printf("Proceed to Salary Calculation\n");
-                 printf("\nYour Basic Pay is Ksh.%d",Basic_Salary[0]);
-                 printf("Enter Total overtime worked in the past month:");
-                 scanf("%f",&OvertimeHours);
+            {   
+                 printf("\nProceed to Salary Calculation\n");
+                 printf("\nYour Basic Pay is Ksh.%d",Basic_Salary[1]);
+                 printf("\nEnter Total overtime worked in the past month:");
+                 scanf("%lf",&OvertimeHours);
                  OvertimeAllowance = OvertimeHours*400;
                  Gross_Salary = Basic_Salary[1] + RiskAllowannce[1]+ HouseAllowance[1] + OvertimeAllowance;
                      if(Gross_Salary<12300){
@@ -80,16 +78,14 @@ int main()
                 Deductions= PAYE + NSSF +NHIF;
                 NetSalary= Gross_Salary - Deductions;
             }
-            else (Title=3)
-            {   int Basic_Salary[]={150000,100000,70000};
-                int RiskAllowannce[]={1000,1500,1500};
-                int HouseAllowance[]={35000,15000,14000};
-                printf("Proceed to Salary Calculation\n");
-                printf("\nYour Basic Pay is Ksh.%d",Basic_Salary[0]);
-                printf("Enter Total overtime worked in the past month:");
-                scanf("%f",&OvertimeHours);
+            else
+           {   
+                printf("\nProceed to Salary Calculation\n");
+                printf("\nYour Basic Pay is Ksh.%d\n",Basic_Salary[2]);
+                printf("\nEnter Total overtime worked in the past month:");
+                scanf("%lf",&OvertimeHours);
                 OvertimeAllowance = OvertimeHours*400;
-                Gross_Salary = Basic_Salary[0] + RiskAllowannce[0]+ HouseAllowance[0] + OvertimeAllowance;
+                Gross_Salary = Basic_Salary[2] + RiskAllowannce[2]+ HouseAllowance[2] + OvertimeAllowance;
                      if(Gross_Salary<12300){
                         PAYE= Gross_Salary*0.1;
                      }
@@ -105,57 +101,175 @@ int main()
                     }
                 Deductions= PAYE + NSSF +NHIF;
                 NetSalary= Gross_Salary - Deductions;
-            } break;
+            } printf("\n%c %c \n Gross Salary: %lf \nPAYE: %lf \nTotal Deductions:%d \nNet Income: %lf\n",F_Name,S_Name,Gross_Salary,PAYE,Deductions,NetSalary);
+              printf("\n####################** THANK YOU FOR SERVING US **##################################\n");
+            break;
 
         case 2:
 
-          int Basic_Salary[]={150000,100000,70000};
-          int RiskAllowannce[]={1000,1500,1500};
-          int HouseAllowance[]={35000,15000,14000};
           printf("Enter your First Name: \n");
           scanf("%c",&F_Name);
-          printf("Enter your second Name:\n");
+          printf("\nEnter your second Name:\n");
           scanf("%c",&S_Name);
-          printf("\nEnter your Title\n 1.C.E.O, 2.Manager ,3.Assistant Manager,");
+          printf("\nEnter your Title\n \n1.Head of HR \n2.HR Manager\n 3.Secretary,\n");
           scanf("%d",&Title);
-        break;
-        
+          if (Title=1)
+
+            { printf("\nProceed to Salary Calculation\n");
+              printf("\nYour Basic Pay is Ksh.%d",Basic_Salary[3]);
+              printf("\nEnter Total overtime worked in the past month:");
+              scanf("%lf",&OvertimeHours);
+              OvertimeAllowance = OvertimeHours*400;
+                 Gross_Salary = Basic_Salary[3] + RiskAllowannce[3]+ HouseAllowance[3] + OvertimeAllowance;
+                     if(Gross_Salary<12300){
+                        PAYE= Gross_Salary*0.1;
+                     }
+                    else if(Gross_Salary <=23900){
+                        PAYE= Gross_Salary*0.15;
+                    }
+                    else if(Gross_Salary<=35500){
+                        PAYE= Gross_Salary*0.2;
+                    }else if(Gross_Salary<=45060){
+                        PAYE= Gross_Salary*0.25;
+                    }else {
+                        PAYE = Gross_Salary*0.3;
+                    }
+                Deductions= PAYE + NSSF +NHIF;
+                NetSalary= Gross_Salary - Deductions;
+			}else if (Title=2)
+            {    
+                 printf("\nProceed to Salary Calculation\n");
+                 printf("\nYour Basic Pay is Ksh.%d",Basic_Salary[4]);
+                 printf("\nEnter Total overtime worked in the past month:");
+                 scanf("%lf",&OvertimeHours);
+                 OvertimeAllowance = OvertimeHours*400;
+                 Gross_Salary = Basic_Salary[4] + RiskAllowannce[4]+ HouseAllowance[4] + OvertimeAllowance;
+                     if(Gross_Salary<12300){
+                        PAYE= Gross_Salary*0.1;
+                     }
+                    else if(Gross_Salary <=23900){
+                        PAYE= Gross_Salary*0.15;
+                    }
+                    else if(Gross_Salary<=35500){
+                        PAYE= Gross_Salary*0.2;
+                    }else if(Gross_Salary<=45060){
+                        PAYE= Gross_Salary*0.25;
+                    }else {
+                        PAYE = Gross_Salary*0.3;
+                    }
+                Deductions= PAYE + NSSF +NHIF;
+                NetSalary= Gross_Salary - Deductions;
+            }
+            else
+            {   
+                printf("\nProceed to Salary Calculation\n");
+                printf("\nYour Basic Pay is Ksh.%d",Basic_Salary[5]);
+                printf("\nEnter Total overtime worked in the past month:");
+                scanf("%lf",&OvertimeHours);
+                OvertimeAllowance = OvertimeHours*400;
+                Gross_Salary = Basic_Salary[5] + RiskAllowannce[5]+ HouseAllowance[5] + OvertimeAllowance;
+                     if(Gross_Salary<12300){
+                        PAYE= Gross_Salary*0.1;
+                     }
+                    else if(Gross_Salary <=23900){
+                        PAYE= Gross_Salary*0.15;
+                    }
+                    else if(Gross_Salary<=35500){
+                        PAYE= Gross_Salary*0.2;
+                    }else if(Gross_Salary<=45060){
+                        PAYE= Gross_Salary*0.25;
+                    }else {
+                        PAYE = Gross_Salary*0.3;
+                    }
+                 Deductions= PAYE + NSSF +NHIF;
+                 NetSalary= Gross_Salary - Deductions;
+                }   
+              printf("\n%c %c \n Gross Salary:%lf \nPAYE:%lf \nTotal Deductions:%d \nNet Income:%lf\n",F_Name,S_Name,Gross_Salary,PAYE,Deductions,NetSalary);
+              printf("\n####################** THANK YOU FOR SERVING US **##################################\n");
+            break;
         case 3:
-         int Basic_Salary[]={150000,100000,70000};
-          int RiskAllowannce[]={1000,1500,1500};
-          int HouseAllowance[]={35000,15000,14000};
+
           printf("Enter your First Name: \n");
           scanf("%c",&F_Name);
-          printf("Enter your second Name:\n");
+          printf("\nEnter your second Name:\n");
           scanf("%c",&S_Name);
-          printf("\nEnter your Title\n 1.C.E.O, 2.Manager ,3.Assistant Manager,");
+          printf("\nEnter your Title\n \n1.Head of ICT\n 2.Techinian\n3.Other Employee\n");
           scanf("%d",&Title);
+
+           if (Title=1)
+
+            { printf("\nProceed to Salary Calculation\n");
+              printf("\nYour Basic Pay is Ksh.%d",Basic_Salary[6]);
+              printf("\nEnter Total overtime worked in the past month:");
+              scanf("%lf",&OvertimeHours);
+              OvertimeAllowance = OvertimeHours*400;
+                 Gross_Salary = Basic_Salary[6] + RiskAllowannce[6]+ HouseAllowance[6] + OvertimeAllowance;
+                     if(Gross_Salary<12300){
+                        PAYE= Gross_Salary*0.1;
+                     }
+                    else if(Gross_Salary <=23900){
+                        PAYE= Gross_Salary*0.15;
+                    }
+                    else if(Gross_Salary<=35500){
+                        PAYE= Gross_Salary*0.2;
+                    }else if(Gross_Salary<=45060){
+                        PAYE= Gross_Salary*0.25;
+                    }else {
+                        PAYE = Gross_Salary*0.3;
+                    }
+                Deductions= PAYE + NSSF +NHIF;
+                NetSalary= Gross_Salary - Deductions;
+            }else if (Title=2)
+            {    
+                 printf("\nProceed to Salary Calculation\n");
+                 printf("\nYour Basic Pay is Ksh.%d",Basic_Salary[7]);
+                 printf("\nEnter Total overtime worked in the past month:");
+                 scanf("%lf",&OvertimeHours);
+                 OvertimeAllowance = OvertimeHours*400;
+                 Gross_Salary = Basic_Salary[7] + RiskAllowannce[7]+ HouseAllowance[7] + OvertimeAllowance;
+                     if(Gross_Salary<12300){
+                        PAYE= Gross_Salary*0.1;
+                     }
+                    else if(Gross_Salary <=23900){
+                        PAYE= Gross_Salary*0.15;
+                    }
+                    else if(Gross_Salary<=35500){
+                        PAYE= Gross_Salary*0.2;
+                    }else if(Gross_Salary<=45060){
+                        PAYE= Gross_Salary*0.25;
+                    }else {
+                        PAYE = Gross_Salary*0.3;
+                    }
+                Deductions= PAYE + NSSF +NHIF;
+                NetSalary= Gross_Salary - Deductions;
+            }
+            else 
+            {   
+                printf("\nProceed to Salary Calculation\n");
+                printf("\nYour Basic Pay is Ksh.%d",Basic_Salary[8]);
+                printf("\nEnter Total overtime worked in the past month:");
+                scanf("%lf",&OvertimeHours);
+                OvertimeAllowance = OvertimeHours*400;
+                Gross_Salary = Basic_Salary[8] + RiskAllowannce[8]+ HouseAllowance[8] + OvertimeAllowance;
+                     if(Gross_Salary<12300){
+                        PAYE= Gross_Salary*0.1;
+                     }
+                    else if(Gross_Salary <=23900){
+                        PAYE= Gross_Salary*0.15;
+                    }
+                    else if(Gross_Salary<=35500){
+                        PAYE= Gross_Salary*0.2;
+                    }else if(Gross_Salary<=45060){
+                        PAYE= Gross_Salary*0.25;
+                    }else {
+                        PAYE = Gross_Salary*0.3;
+                    }
+                Deductions= PAYE + NSSF +NHIF;
+                NetSalary= Gross_Salary - Deductions;
+            } 
+            printf("\n%c %c \n Gross Salary:%lf \nPAYE:%lf \nTotal Deductions:%d \nNet Income:%lf\n",F_Name,S_Name,Gross_Salary,PAYE,Deductions,NetSalary);
+            printf("\n####################** THANK YOU FOR SERVING US **##################################\n");;
         break;
-        case 4:
-         int Basic_Salary[]={150000,100000,70000};
-          int RiskAllowannce[]={1000,1500,1500};
-          int HouseAllowance[]={35000,15000,14000};
-          printf("Enter your First Name: \n");
-          scanf("%c",&F_Name);
-          printf("Enter your second Name:\n");
-          scanf("%c",&S_Name);
-          printf("\nEnter your Title\n 1.C.E.O, 2.Manager ,3.Assistant Manager,");
-          scanf("%d",&Title);
-          break;
-   }    }
-}
+        }
+}   }    
 
-
-
-    
-
-
-
-
-    
-
-
-
-
-
-}
