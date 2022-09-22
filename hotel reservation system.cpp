@@ -278,3 +278,4 @@ int main()
   }end:
 		cout<<"Total Money Used= Kshs."<<total;
 }
+/* Edwin codes -Hotel reservation system project in c++*/

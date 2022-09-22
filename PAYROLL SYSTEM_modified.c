@@ -197,3 +197,4 @@ double grossTax(double Gross_Salary){
       return PAYE;
 
 }
+//Modified payroll system Edwin codes

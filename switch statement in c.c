@@ -23,3 +23,4 @@ switch (day) {
     printf("Sunday");
     break;
 }
+//Edwin codes --switch statements in c programming

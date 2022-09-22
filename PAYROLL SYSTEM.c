@@ -186,3 +186,4 @@ double grossTax(double Gross_Salary){
 		}
       return PAYE;
 }
+//Edwin codes --payroll system version 1.0
